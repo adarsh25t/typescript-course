@@ -1,0 +1,11 @@
+
+CORE TYPES
+----------
+# NUMBER
+# STRING
+# BOOLEAN
+# OBJECT
+# ARRAY
+# TUPLES
+# ENUM
+# ANY
