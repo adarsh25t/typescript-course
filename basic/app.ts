@@ -1,66 +1,36 @@
-console.log('Your code goes hello here... ');
 
-/* string, number,boolean */
-let names: string;
-names = "hello";
+// union type ( | ) add multiple types
 
-let age: number = 30;
-let isTrue: boolean = false;
-let price: any = 30
-price = "hello"
+let valu: string | number;
 
-console.log(names,age,isTrue,price);
-
-
-/* array */
-// only add number
-let number: number[] = [12,55,333,45343];
-
-// add only the string
-let arr2: string[] = ["hin", "afsfsadfsfd", "fjjkdd"];
-
-/* object */
-let person: {
-    name: string,
-    age: number
-} = {
-    name: "heloi",
-    age: 31
-}
-console.log(person);
-
-const product: {
-    id: string;
-    price: number;
-    tags: string[];
-    details: {
-      title: string;
-      description: string;
-    }
-} = {
-    id: 'abc1',
-    price: 12.99,
-    tags: ['great-offer', 'hot-and-new'],
-    details: {
-      title: 'Red Carpet',
-      description: 'A great carpet - almost brand-new!'
-    }
+function combine(input1: number | string, input2: number | string) {
+  let result;
+  if (typeof input1 === "number" && typeof input2 === "number") {
+    result = input1 + input2
   }
+  else {
+    result = input1.toString() + input2.toString();
+  }
+  return result;
+}
+
+let combineNumber = combine(10,40);
+console.log(combineNumber);
+
+let combineString = combine("hello","man")
+console.log(combineString);
 
 
-/* tuples */
+//   LITERAL TYPE  ( set one vlaue, that value never change)
+const type: string =  "hello"
 
-// this array have only 4 values with we already asign the values
-let arr1: [number,string,boolean,string] = [3,"new",true,"hii"];
+// type aliases
+type Combineable = number | string;
+type resultText = "success" | "fail";
+type User = { name: string; age: number };
 
-
-/* enums */
-
-// default value start 0
-// if you need to change any vlaues
-enum Role  { ADMIN,USER,CUSTOMER };
-enum persons { new = "he", old = "she", then = 1}
-
-if (Role.ADMIN === 0) {
-    console.log("admin login");
+function combines(input1: Combineable, input2: Combineable,result: resultText) {
+}
+function greet(user: User) {
+  console.log('Hi, I am ' + user.name);
 }
